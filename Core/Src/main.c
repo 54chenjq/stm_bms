@@ -21,7 +21,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stdlib.h"
+#include "LTC6811.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -92,6 +93,8 @@ int main(void)
   MX_USART2_UART_Init();
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
+  cell_asic *c_a = (cell_asic *)malloc(1);
+  uint8_t pec;
 
   /* USER CODE END 2 */
 
@@ -100,7 +103,12 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+	  pec = 2;
+	  wakeup_sleep(1);
+	  LTC6811_wrcfg(1, c_a, &hspi1);
+	  wakeup_sleep(1);
+	  pec = LTC6811_rdcfg(1, c_a, &hspi1);
+	  HAL_Delay(1000);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
