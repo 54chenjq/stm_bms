@@ -106,8 +106,13 @@ int main(void)
 	  pec = 2;
 	  wakeup_sleep(1);
 	  LTC6811_wrcfg(1, c_a, &hspi1);
-	  wakeup_sleep(1);
-	  pec = LTC6811_rdcfg(1, c_a, &hspi1);
+
+	  LTC6811_adcv(2, 0, 0, &hspi1);
+	  HAL_Delay(4000);
+	  pec=LTC6811_rdcv(0, 1, c_a, &hspi1);
+	  LTC6811_clrcell(&hspi1);
+	  pec=LTC6811_rdcv(0, 1, c_a, &hspi1);
+
 	  HAL_Delay(1000);
     /* USER CODE BEGIN 3 */
   }
