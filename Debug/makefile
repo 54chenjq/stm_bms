@@ -60,8 +60,8 @@ all: main-build
 main-build: stm_bms.elf secondary-outputs
 
 # Tool invocations
-stm_bms.elf stm_bms.map: $(OBJS) $(USER_OBJS) C:\Users\Dovlat\STM32CubeIDE\workspace_1.10.1\stm_bms\STM32G431KBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "stm_bms.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\Dovlat\STM32CubeIDE\workspace_1.10.1\stm_bms\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm_bms.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+stm_bms.elf stm_bms.map: $(OBJS) $(USER_OBJS) C:\Users\dovlati\Documents\stm_bms\STM32G431KBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "stm_bms.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\dovlati\Documents\stm_bms\STM32G431KBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm_bms.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

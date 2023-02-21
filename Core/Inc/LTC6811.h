@@ -469,5 +469,6 @@ void LTC6811_set_cfgr_ov(uint8_t nIC, //!< Current IC
                          cell_asic *ic, //!< A two dimensional array that will store the data
                          uint16_t ov //!< The OV value
 						);
+void LTC6811_rdtmp(uint8_t nIC, cell_asic *ic,SPI_HandleTypeDef * hspi ); //reads temperature of the cells
 
 #endif

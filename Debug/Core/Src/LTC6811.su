@@ -49,3 +49,4 @@
 ../Core/Src/LTC6811.c:491:6:LTC6811_set_cfgr_dcto	24	static
 ../Core/Src/LTC6811.c:497:6:LTC6811_set_cfgr_uv	16	static
 ../Core/Src/LTC6811.c:503:6:LTC6811_set_cfgr_ov	16	static
+../Core/Src/LTC6811.c:508:6:LTC6811_rdtmp	24	static

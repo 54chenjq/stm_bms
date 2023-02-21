@@ -504,3 +504,13 @@ void LTC6811_set_cfgr_ov(uint8_t nIC, cell_asic *ic,uint16_t ov)
 {
   LTC681x_set_cfgr_ov( nIC, ic, ov);
 }
+
+void LTC6811_rdtmp(uint8_t nIC, cell_asic *ic,SPI_HandleTypeDef * hspi ){
+	wakeup_sleep(nIC);
+	LTC681x_adax(nIC, 0, hspi);
+	HAL_Delay(5); // TODO find the right delay
+	wakeup_sleep(nIC);
+	LTC681x_rdaux(0, nIC, ic, hspi);
+
+
+	}

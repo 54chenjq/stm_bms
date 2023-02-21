@@ -23,6 +23,7 @@
 /* USER CODE BEGIN Includes */
 #include "stdlib.h"
 #include "LTC6811.h"
+#include "parse_temp.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -103,17 +104,25 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  pec = 2;
-	  wakeup_sleep(1);
+
+	   pec = 2;
+	 /* wakeup_sleep(1);
 	  LTC6811_wrcfg(1, c_a, &hspi1);
 
 	  LTC6811_adcv(2, 0, 0, &hspi1);
-	  HAL_Delay(4000);
+	  HAL_Delay(5);
+	  wakeup_sleep(1);
 	  pec=LTC6811_rdcv(0, 1, c_a, &hspi1);
-	  LTC6811_clrcell(&hspi1);
-	  pec=LTC6811_rdcv(0, 1, c_a, &hspi1);
+	  LTC6811_clrcell(&hspi1);*/
 
-	  HAL_Delay(1000);
+	   wakeup_sleep(1);
+	   	LTC6811_adax(1, 0, &hspi1);
+	   	HAL_Delay(10); // TODO find the right delay
+	   	wakeup_sleep(1);
+	   	LTC6811_rdaux(0, 1, c_a, &hspi1);
+	   	LTC6811_clraux(&hspi1);
+	   	parse_temp(1, c_a);
+	   	HAL_Delay(5);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
