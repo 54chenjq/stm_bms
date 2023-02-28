@@ -73,8 +73,10 @@ typedef struct
 /*! AUX Reg Voltage Data structure */
 typedef struct
 {
-  uint16_t a_codes[9]; //!< Aux Voltage Codes
+  uint16_t a_codes[10]; //!< Aux Voltage Codes
   uint8_t pec_match[4]; //!< If a PEC error was detected during most recent read cmd
+  double s_temp[10];
+
 } ax;
 
 /*! Status Reg data structure. */

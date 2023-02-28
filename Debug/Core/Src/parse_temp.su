@@ -1,3 +1,1 @@
-../Core/Src/parse_temp.c:57:9:search_temp_range	32	static
-../Core/Src/parse_temp.c:103:9:calc_temp	40	static
-../Core/Src/parse_temp.c:140:6:parse_temp	88	dynamic
+../Core/Src/parse_temp.c:8:6:temp_calc	48	static
